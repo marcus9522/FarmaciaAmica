@@ -13,3 +13,31 @@ input {
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
 }
+button {
+	  background: #d1c9d1;
+	  background-image: -webkit-linear-gradient(top, #d1c9d1, #fcfeff);
+	  background-image: -moz-linear-gradient(top, #d1c9d1, #fcfeff);
+	  background-image: -ms-linear-gradient(top, #d1c9d1, #fcfeff);
+	  background-image: -o-linear-gradient(top, #d1c9d1, #fcfeff);
+	  background-image: linear-gradient(to bottom, #d1c9d1, #fcfeff);
+	  -webkit-border-radius: 8;
+	  -moz-border-radius: 8;
+	  border-radius: 8px;
+	  text-shadow: 1px 1px 3px #666666;
+	  font-family: Georgia;
+	  color: #0d0c0d;
+	  font-size: 25px;
+	  padding: 10px 20px 10px 20px;
+	  border: solid #0a0a0a 2px;
+	  text-decoration: none;
+	}
+
+button:hover {
+	  background: #3cb0fd;
+	  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	  text-decoration: none;
+	}

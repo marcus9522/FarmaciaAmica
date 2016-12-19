@@ -141,7 +141,7 @@
 					System.out.println(bean.getNome());
 		%>
             <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
+                <a href="product?action=prodotto&nomeProdotto=<%=bean.getNome()%>">
                     <img class="img-responsive img-portfolio img-hover" src="<%= bean.getFoto() %>" alt="" width="300" height="150">
                 </a>
                             </div>
