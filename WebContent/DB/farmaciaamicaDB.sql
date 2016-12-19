@@ -40,15 +40,17 @@ NomeProdotto varchar(20) not null,
 /*Prodotti*/
 
  Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
-    Values('Oki', 'Antinfiammatorio', '10', '{{\field{\*\fldinst{HYPERLINK http://infonotizie.eu/wp-content/uploads/2016/01/Schermata-2015-11-28-alle-08.55.03.png }}{\fldrslt{http://infonotizie.eu/wp-content/uploads/2016/01/Schermata-2015-11-28-alle-08.55.03.png\ul0\cf0}}}}\f0\fs22 ');
-    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)\par
-    Values('Tachipirina', 'Paracetamolo', '5', '{{\field{\*\fldinst{HYPERLINK http://www.pharmamedix.com/img/formeFarmaceutiche/tachipirina_compresse_1000.jpg }}{\fldrslt{http://www.pharmamedix.com/img/formeFarmaceutiche/tachipirina_compresse_1000.jpg\ul0\cf0}}}}\f0\fs22 ');
-    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)\par
-    Values('Zerinol', 'Antipiretico', '12', '{{\field{\*\fldinst{HYPERLINK http://www.lafarmaciaduemadonne.it/files/2015/02/23/zerinolflu.jpeg }}{\fldrslt{http://www.lafarmaciaduemadonne.it/files/2015/02/23/zerinolflu.jpeg\ul0\cf0}}}}\f0\fs22 ');
-    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)\par
-    Values('Benagol', 'Antisettico', '15', '{{\field{\*\fldinst{HYPERLINK http://www.pharmily.it/2579-thickbox_default/benagol-vitamina-c-past-arancia.jpg }}{\fldrslt{http://www.pharmily.it/2579-thickbox_default/benagol-vitamina-c-past-arancia.jpg\ul0\cf0}}}}\f0\fs22 ');
-    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)\par
-    Values('MomentRosa', 'Analgesico', '20', '{{\field{\*\fldinst{HYPERLINK http://www.momendol.it/media/1264/momentrosa_bustine_12_big.jpg }}{\fldrslt{http://www.momendol.it/media/1264/momentrosa_bustine_12_big.jpg\ul0\cf0}}}}\f0\fs22 ');
+    Values('Oki', 'Antinfiammatorio', '10', 'http://infonotizie.eu/wp-content/uploads/2016/01/Schermata-2015-11-28-alle-08.55.03.png');
+    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
+    Values('Tachipirina', 'Paracetamolo', '5', 'http://www.pharmamedix.com/img/formeFarmaceutiche/tachipirina_compresse_1000.jpg');
+    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
+    Values('Zerinol', 'Antipiretico', '12', 'http://www.lafarmaciaduemadonne.it/files/2015/02/23/zerinolflu.jpeg');
+    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
+    Values('Benagol', 'Antisettico', '15', 'http://www.saninforma.it/immagini/190004778.png');
+    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
+    Values('MomentRosa', 'Analgesico', '20', 'http://www.momendol.it/media/1264/momentrosa_bustine_12_big.jpg');
+    Insert into Prodotti(NomeProdotto, Descrizione, Prezzo, Foto)
+    Values('Lucen', 'Analgesico', '20', 'http://www.my-personaltrainer.it/thumbs/700x700/images/farmaci/Lucen.jpg');
 /*Acquista*/
  Insert into Acquista(Email, NomeProdotto)
     Values ('alecriscuolo@gmail.com', 'oki');
