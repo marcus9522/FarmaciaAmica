@@ -25,7 +25,7 @@ Descrizione varchar(30) not null,
 );
 
 create table Acquista(
-Email varchar(20) not null,
+Email varchar(30) not null,
 NomeProdotto varchar(20) not null,
     Foreign key(Email) references Cliente(Email) on update cascade,
     Foreign key(NomeProdotto) references Prodotti(NomeProdotto) on update cascade
