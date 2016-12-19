@@ -33,9 +33,9 @@ NomeProdotto varchar(20) not null,
 
 /*Cliente*/
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Alessandro', 'Criscuolo',' alecriscuolo@gmail.com', 'password', 07/08/2000, 8000, 20, 'Via Roma', 'Milano', 'MI');
+   VALUES ('Alessandro', 'Criscuolo','alecriscuolo@gmail.com', 'password', 07/08/2000, 8000, 20, 'Via Roma', 'Milano', 'MI');
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Marco', 'Avagliano',' marcus@gmail.com', 'password', 07/08/2000, 7000, 30, 'Via Milano', 'Roma', 'RO');
+   VALUES ('Marco', 'Avagliano','marcus@gmail.com', 'password', 07/08/2000, 7000, 30, 'Via Milano', 'Roma', 'RO');
    
 /*Prodotti*/
 
@@ -53,7 +53,7 @@ NomeProdotto varchar(20) not null,
     Values('Lucen', 'Analgesico', '20', 'http://www.my-personaltrainer.it/thumbs/700x700/images/farmaci/Lucen.jpg');
 /*Acquista*/
  Insert into Acquista(Email, NomeProdotto)
-    Values ('alecriscuolo@gmail.com', 'oki');
+    Values ('alecriscuolo@gmail.com', 'Oki');
     Insert into Acquista(Email, NomeProdotto)
     Values ('marcus@gmail.com', 'MomentRosa');
     Insert into Acquista(Email, NomeProdotto)

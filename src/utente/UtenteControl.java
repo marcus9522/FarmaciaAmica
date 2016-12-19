@@ -92,7 +92,7 @@ public class UtenteControl extends HttpServlet {
 			if ((email != null) && (password != null)) {
 				try {
 					if (model.login(email, password).equals("true")) {
-						String redirectedPage = "/index.jsp";
+						String redirectedPage = "/product2";
 						response.sendRedirect(request.getContextPath() + redirectedPage);
 						request.getSession().setAttribute("email", email);
 					} else {
