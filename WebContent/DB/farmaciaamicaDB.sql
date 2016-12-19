@@ -60,4 +60,3 @@ NomeProdotto varchar(20) not null,
     Values ('alecriscuolo@gmail.com', 'Benagol');
     Insert into Acquista(Email, NomeProdotto)
     Values ('marcus@gmail.com', 'Zerinol');
-}
