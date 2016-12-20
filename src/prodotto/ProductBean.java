@@ -2,18 +2,28 @@ package prodotto;
 
 public class ProductBean {
 
-	String nomeProdotto;
-	double prezzo;
-	String descrizione;
-    String foto;
+	private String nomeProdotto,descrizione,foto,categoria;
+	private double prezzo;
 
 	public ProductBean() {
 		nomeProdotto = "";
 		prezzo = 0;
 		descrizione = "";
 		foto="";
+		categoria = "";
 	}
 	
+
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 
 	public String getFoto() {
 		return foto;

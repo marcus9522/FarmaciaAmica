@@ -138,7 +138,6 @@
 				Iterator<?> it = products.iterator();
 				while (it.hasNext()&& i<5) {
 					ProductBean bean = (ProductBean) it.next();
-					System.out.println(bean.getNome());
 		%>
             <div class="col-md-4 col-sm-6">
                 <a href="product?action=prodotto&nomeProdotto=<%=bean.getNome()%>">

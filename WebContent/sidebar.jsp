@@ -47,7 +47,7 @@
                         <a href="about.jsp">Info</a>
                     </li>
                     <li>
-                        <a href="services.html">Catalogo</a>
+                        <a href="product?action=prodotti">Catalogo</a>
                     </li>
                     <li>
                         <a href="login.jsp">Login</a>

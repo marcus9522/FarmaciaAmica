@@ -61,7 +61,21 @@ public class ProductControl extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
-			
+		if(action.equalsIgnoreCase("filtramed")){
+			double min = Double.valueOf(request.getParameter("min"));
+			double max = Double.valueOf(request.getParameter("max"));
+			String order = request.getParameter("order");
+			String tipologia = request.getParameter("tipologia");
+			System.out.println(tipologia);
+			request.removeAttribute("prodotti2");
+			try {
+				request.setAttribute("prodotti2", model.filtra(order, min, max, tipologia));
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
+			dispatcher.forward(request, response);
+		}	
 			
 }
 }

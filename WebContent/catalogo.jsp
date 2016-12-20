@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*,prodotto.ProductBean"%>
-    
+    <%String email= (String) session.getAttribute("email");
+Collection<?> products = (Collection<?>) request.getAttribute("prodotti2");%>
 <!DOCTYPE html >
 <html>
 <head>
-<%String email= (String) session.getAttribute("email");
-  ProductBean product = (ProductBean) request.getAttribute("prodotto");%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><%=product.getNome()%></title>
+<title>Catalogo</title>
 <head>
 
     <meta charset="utf-8">
@@ -35,51 +35,49 @@
    <%@ include file ="sidebarprotected.jsp" %>
    <%} %>
 <div class="container">
-
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Info
-                    <small><%=product.getNome() %></small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="/product">Home</a>
-                    </li>
-                    <li class="active"><%=product.getNome() %></li>
-                </ol>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Intro Content -->
-        <div class="row">
-            <div class="col-md-6">
-                <img class="img-responsive" src="<%= product.getFoto() %>" alt="">
-            </div>
-            <div class="col-md-6">
-                <h2><%= product.getNome()%></h2>
-                <p><%=product.getDescrizione() %>  </p>
-               <br>
-                <b><p>Prezzo: <%=product.getPrezzo()%> &euro;</p></b>
-            </div>
-            <%if (email!=null) {%>
-	                    <div align="center"><a href="Cart?action=addC&nomeprodotto=<%=product.getNome()%>"><button>Aggiungi al carrello</button></a></div>
-	                    <%}else{  %>
-	                    <div align="center"><a href="login.jsp"><button>Effettua il login per aggiungere al carrello</button></a></div>
-	                    <%} %>
-        </div>
-        <!-- /.row -->
+           <h2 class="page-header">Filtra</h2>
+           <%@ include file ="filtra.jsp" %>
+       
 
         <!-- Team Members -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Team</h2>
+                <h2 class="page-header">Catalogo</h2>
             </div>
-            <div class="col-md-4 text-center">
+            <%		
+            int i=0;
+			if (products != null && products.size() != 0) {
+				Iterator<?> it = products.iterator();
+				while (it.hasNext()&& i<5) {
+					ProductBean bean = (ProductBean) it.next();		
+					%>
+					
+					<div class="col-md-4 text-center">
+	                <div class="thumbnail">
+	                <a href="product?action=prodotto&nomeProdotto=<%=bean.getNome()%>">
+	                    <img class="img-responsive" src="<%=bean.getFoto()%>" alt="">
+	                    </a>
+	                    <div class="caption">
+	                        <h3><%=bean.getNome()%><br>
+	                            <small><%=bean.getPrezzo()%> &euro;</small>
+	                        </h3>
+	                        <p><%=bean.getDescrizione()%></p>
+	                    </div>
+	                    <%if (email!=null) {%>
+	                    <div align="center"><a href="Cart?action=addC&nomeprodotto=<%=bean.getNome()%>"><button>Aggiungi al carrello</button></a></div>
+	                    <%}else{  %>
+	                    <div align="center"><a href="login.jsp"><button>Effettua il login per aggiungere al carrello</button></a></div>
+	                    <%} %>
+	                </div>
+	            </div>
+	            <%i++;%>
+	            <%} }%>
+	            
+            <!--  <div class="col-md-4 text-center">
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
                     <div class="caption">
-                        <h3>John Smith<br>
+                        <h3><br>
                             <small>Job Title</small>
                         </h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>

@@ -106,12 +106,16 @@ public class ProductModelDM implements ProductModel {
 			else selectSQL+= " AND ";
 			selectSQL += " prezzo<= " + max;
 		}
-		if (tipologia != " ") {
+		if (tipologia != null) {
 			if(first==true){selectSQL += " WHERE ";
                             first=false;			 
 			                }
 			else selectSQL+= " AND ";
-			selectSQL += " tipologia = " + tipologia;
+			selectSQL += "categoria =";
+			selectSQL += " '";
+			selectSQL += tipologia;
+			selectSQL += " '";
+			System.out.println(selectSQL);
 		}
 		if (order != null && !order.equals("")) {
 			selectSQL += " ORDER BY " + order;
@@ -131,6 +135,7 @@ public class ProductModelDM implements ProductModel {
 				bean.setDescrizione(rs.getString("DESCRIZIONE"));
 				bean.setPrezzo(rs.getDouble("PREZZO"));
 				bean.setFoto(rs.getString("FOTO"));
+				bean.setCategoria(rs.getString("categoria"));
 				products.add(bean);
 			}
 		}finally {
@@ -164,6 +169,7 @@ public class ProductModelDM implements ProductModel {
 				bean.setDescrizione(rs.getString("DESCRIZIONE"));
 				bean.setPrezzo(rs.getDouble("PREZZO"));
 				bean.setFoto(rs.getString("FOTO"));
+				bean.setCategoria(rs.getString("categoria"));
 				prodotti.add(bean);
 			}
 		}finally {

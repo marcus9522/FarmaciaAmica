@@ -108,8 +108,7 @@ public class UtenteControl extends HttpServlet {
 		}
 		if(azione.equalsIgnoreCase("logout")){
 	        request.getSession().invalidate();
-	        System.out.println("Sto facendo il logout");
-	        String redirectedPage="/index.jsp";
+	        String redirectedPage="/product2";
 	        response.sendRedirect(request.getContextPath() + redirectedPage);
 			}
 	}
