@@ -21,6 +21,7 @@
 <input type="num" name="max" required  value=0 width="5%" > 
 <small>Tipologia: </small>
 <select name="tipologia">
+         <option value="">Tutte</option>
 	     <option value="Antisettico">Antisettico</option>
 	     <option value="Analgesico">Analgesico</option>
 	     <option value="Antinfiammatorio">Antinfiammatorio</option>

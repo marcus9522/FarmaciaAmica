@@ -106,7 +106,7 @@ public class ProductModelDM implements ProductModel {
 			else selectSQL+= " AND ";
 			selectSQL += " prezzo<= " + max;
 		}
-		if (tipologia != null) {
+		if (tipologia.isEmpty()==false) {
 			if(first==true){selectSQL += " WHERE ";
                             first=false;			 
 			                }
