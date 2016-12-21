@@ -50,7 +50,7 @@
                         <a href="product?action=prodotti">Catalogo</a>
                     </li>               
                     <li>
-                        <a href="registrazione.jsp">Carrello</a>
+                        <a href="carrello.jsp">Carrello</a>
                     </li>
                      <li>
                      <a href="areautente.jsp">AreaUtente</a>

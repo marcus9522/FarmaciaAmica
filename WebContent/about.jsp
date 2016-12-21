@@ -50,13 +50,12 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" src="Foto/Logo.png" alt="">
             </div>
             <div class="col-md-6">
                 <h2>Farmacia Amica</h2>
-                <p>Farmacia Amica è un e-commerce di farmaci che si pone  </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                <p>L'idea di base del sistema è quella di fornire a persone anziane e/o disabili che hanno problemi a spostarsi, un e-commerce di medicinali, che permetta loro di richiedere i farmaci di cui hanno bisogno inoltrando una richiesta alla farmacia più vicina alla loro ubicazione.
+L'obiettivo principale del sistema sarà quello di migliorare la qualità di vita delle persone sopracitate risolvendo alcuni dei molti problemi che quest'ultime affrontano ogni giorno.  </p>
             </div>
         </div>
         <!-- /.row -->
