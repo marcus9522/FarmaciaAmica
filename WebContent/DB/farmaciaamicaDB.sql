@@ -37,9 +37,9 @@ create table Acquista(
 
 /*Cliente*/
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Alessandro', 'Criscuolo','alecriscuolo@gmail.com', 'password', 07/08/2000, 8000, 20, 'Via Roma', 'Milano', 'MI');
+   VALUES ('Alessandro', 'Criscuolo','alecriscuolo@gmail.com', 'password', 2015-08-09, 8000, 20, 'Via Roma', 'Milano', 'MI');
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Marco', 'Avagliano','marcus@gmail.com', 'password', 07/08/2000, 7000, 30, 'Via Milano', 'Roma', 'RO');
+   VALUES ('Marco', 'Avagliano','marcus@gmail.com', 'password', 2000-05-07, 7000, 30, 'Via Milano', 'Roma', 'RO');
    
 /*Prodotti*/
 

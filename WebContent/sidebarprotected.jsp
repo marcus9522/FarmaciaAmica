@@ -56,7 +56,7 @@
                         <a href="registrazione.jsp">AreaUtente</a>
                     </li>
                     <li>
-                        <a href="registrazione.jsp">Carrello</a>
+                        <a href="carrello.jsp">Carrello</a>
                     </li>
                     <%--
                     <li class="dropdown">
