@@ -48,15 +48,15 @@
                     </li>
                     <li>
                         <a href="product?action=prodotti">Catalogo</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/FarmaciaAmica/utente?azione=logout">Logout</a>
-                    </li>
-                    <li>
-                        <a href="registrazione.jsp">AreaUtente</a>
-                    </li>
+                    </li>               
                     <li>
                         <a href="registrazione.jsp">Carrello</a>
+                    </li>
+                     <li>
+                     <a href="areautente.jsp">AreaUtente</a>
+                     </li>
+                      <li>
+                        <a href="http://localhost:8080/FarmaciaAmica/utente?azione=logout">Logout</a>
                     </li>
                     <%--
                     <li class="dropdown">

@@ -1,6 +1,7 @@
 package utente;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -132,4 +133,72 @@ public class UtenteModelDM implements UtenteModel {
 		}
 		return found;
 	  }
+	
+	 
+	 public synchronized UtenteBean LeggiUtente(String email) throws SQLException{
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+	        UtenteBean bean = new UtenteBean();
+			String selectSQL = "SELECT * FROM " + UtenteModelDM.TABLE_NAME + " WHERE EMAIL = ? ";
+			try {
+				connection = DriverManagerConnectionPool.getConnection();
+				preparedStatement = connection.prepareStatement(selectSQL);
+				preparedStatement.setString(1, email);
+				ResultSet rs = preparedStatement.executeQuery();
+				while(rs.next()){
+					bean.setEmail(rs.getString("email"));
+					bean.setNome(rs.getString("nome"));
+					bean.setCognome(rs.getString("cognome"));
+					bean.setPassword(rs.getString("pass"));
+					bean.setCap(Integer.valueOf(rs.getString("cap")));
+					bean.setVia(rs.getString("via"));
+					bean.setCivico(Integer.valueOf(rs.getString("civico")));
+					bean.setCitta(rs.getString("citta"));
+					bean.setProvincia(rs.getString("provincia"));
+					bean.setData_nascita(Date.valueOf(rs.getString("DataNascita")));
+				}
+
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					DriverManagerConnectionPool.releaseConnection(connection);
+				}
+			}
+			return bean;
+		}
+	 
+	 public void doUpdate(UtenteBean utente) throws SQLException{
+			Connection connection = null;
+			PreparedStatement preparedStatement = null;
+
+			String updateSQL = " UPDATE " + UtenteModelDM.TABLE_NAME + " SET PASS = ?, NOME = ?, COGNOME = ?, DATANASCITA = ?, CAP = ?, VIA = ?, CIVICO = ?, CITTA = ?, PROVINCIA = ?" + " WHERE EMAIL = ?";
+			try {
+				connection = DriverManagerConnectionPool.getConnection();
+				preparedStatement = connection.prepareStatement(updateSQL);
+				preparedStatement.setString(1, utente.getPassword());
+				preparedStatement.setString(2, utente.getNome());
+				preparedStatement.setString(3, utente.getCognome());
+				preparedStatement.setDate(4, utente.getData_nascita());
+				preparedStatement.setInt(5, utente.getCap());
+				preparedStatement.setString(6, utente.getVia());
+				preparedStatement.setInt(7, utente.getCivico());
+				preparedStatement.setString(8, utente.getCitta());
+				preparedStatement.setString(9, utente.getProvincia());
+				preparedStatement.setString(10, utente.getEmail());
+
+				preparedStatement.executeUpdate();
+
+				//connection.commit();
+			} finally {
+				try {
+					if (preparedStatement != null)
+						preparedStatement.close();
+				} finally {
+					DriverManagerConnectionPool.releaseConnection(connection);
+				}
+			}
+		}
+	 
 }
