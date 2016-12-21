@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*,prodotto.ProductBean"%>
+<%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*,prodotto.ProductBean,acquista.Cart"%>
     <%String email= (String) session.getAttribute("email");
-Collection<?> products = (Collection<?>) request.getAttribute("prodotti2");%>
+   Cart cart = (Cart) request.getSession().getAttribute("cart");%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -29,25 +29,24 @@ Collection<?> products = (Collection<?>) request.getAttribute("prodotti2");%>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <%if(email == null){ %>
    <%@ include file ="sidebar.jsp" %>
    <%}else{  %>
    <%@ include file ="sidebarprotected.jsp" %>
    <%} %>
+ <%if(cart!=null) 
+ if(cart.getProducts().isEmpty()==false){%>
 <div class="container">
        
-
-        <!-- Team Members -->
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header">Carrello</h2>
             </div>
             <%		
-            int i=0;
-			if (products != null && products.size() != 0) {
-				Iterator<?> it = products.iterator();
-				while (it.hasNext()&& i<5) {
-					ProductBean bean = (ProductBean) it.next();		
+            double totale = 0;
+            List<ProductBean> prodcart=cart.getProducts();
+	        for(ProductBean bean:prodcart){
 					%>
 					
 					<div class="col-md-4 text-center">
@@ -60,103 +59,37 @@ Collection<?> products = (Collection<?>) request.getAttribute("prodotti2");%>
 	                            <small><%=bean.getPrezzo()%> &euro;</small>
 	                        </h3>
 	                        <p><%=bean.getDescrizione()%></p>
+	                        <a href="Cart?action=deleteC&nomeprodotto=<%=bean.getNome()%>"><button>Elimina</button></a>
 	                    </div>
-	                    <%if (email!=null) {%>
-	                    <div align="center"><a href="Cart?action=addC&nomeprodotto=<%=bean.getNome()%>"><button>Aggiungi al carrello</button></a></div>
-	                    <%}else{  %>
-	                    <div align="center"><a href="login.jsp"><button>Effettua il login per aggiungere al carrello</button></a></div>
-	                    <%} %>
 	                </div>
 	            </div>
-	            <%i++;%>
-	            <%} }%>
-	            
-            <!--  <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3><br>
-                            <small>Job Title</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
+	            <%totale+=bean.getPrezzo();%>
+	            <%} %>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <div class="caption">
-                        <h3>John Smith<br>
-                            <small>Job Title</small>
-                        </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Our Customers -->
-            <ul>
-             <%		
-     			double totale = 0;
-			if (products != null && products.size() != 0) {
-				Iterator<?> it = products.iterator();
-				while (it.hasNext()) {
-					ProductBean bean = (ProductBean) it.next();	
-					totale+=bean.getPrezzo();
-					%>
-            	<li><img class="img-responsive customer-img" src="http://placehold.it/500x300" alt=""> </li>
-            </ul>
-            <%}} %>
-            <form action="product?action=filtramed" id="search" method="post" >
             <div align = center> <h3>Totale = <%=totale %> &euro;</h3></div>
-<small>Urgenza: </small>
-<select name="tipologia">
-	     <option value="Alta">Alta</option>
-	     <option value="Media">Media</option>
-	     <option value="Bassa">Bassa<option>
+      
+<div align = right>
+<form action="acquista?azione=insert" method="post" >
+<label for="email">NUMERO CARTA:</label> 
+		<input name="ncarta" type="text" maxlength="30" required placeholder="Inserisci il numero della carta" >
+<label for="email">DATA SCADENZA CARTA:</label> 
+		<input name="date" type="date" min="<%=new java.sql.Date(System.currentTimeMillis()) %>" maxlength="30" required placeholder="Inserisci il numero della carta" >
+<label for="email">CVV/CVV2:</label> 
+		<input name="ncarta" type="number" max=999 required placeholder="Inserisci il numero della carta" >
+<label>URGENZA</label>
+<select name="urgenza">
+         <option value="Bassa">Bassa</option>
+         <option value="Media">Media</option>
+	     <option value="Alta">Alta</option>	     
 	     </select>
-
-<input id="carrello" type="submit" value="Conferma">
+</div>
+<div align = center><input id="carrello" type="submit" value="Conferma"></div>
 <br>
 </form>
-        </div>
+<%} %>           
+ <%if((cart==null)||(cart.getProducts().isEmpty()==true)) { %>
+ <div align = center><h1>Carrello Vuoto</h1></div>
+ <%} %>    
         <!-- /.row -->
 
         <hr>

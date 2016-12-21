@@ -29,6 +29,10 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<script type="text/javascript">
+var site = window.location.href
+if(site.indexOf("add=yes")!=-1) {alert("Prodotto aggiunto al carrello")}
+</script>
 <%if(email == null){ %>
    <%@ include file ="sidebar.jsp" %>
    <%}else{  %>

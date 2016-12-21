@@ -46,14 +46,11 @@ public class AcquistaModelDM implements AcquistaModel {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		Collection<ProductBean> products = new LinkedList<ProductBean>();
-
-		String selectSQL = "Select * from acquista,prodotti where acquista.NomeProdotto=prodotti.NomeProdotto and email= ?";
-		
-
+		String selectSQL = "Select distinct prodotti.* from acquista,prodotti where acquista.NomeProdotto=prodotti.NomeProdotto and email= ?";
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
 			preparedStatement = connection.prepareStatement(selectSQL);
-
+			preparedStatement.setString(1, email);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			while (rs.next()) {
@@ -65,7 +62,7 @@ public class AcquistaModelDM implements AcquistaModel {
 				bean.setFoto(rs.getString("FOTO"));
 				products.add(bean);
 			}
-		}finally {
+		} finally {
 			try {
 				if (preparedStatement != null)
 					preparedStatement.close();
@@ -74,5 +71,5 @@ public class AcquistaModelDM implements AcquistaModel {
 			}
 		}
 		return products;
-	  }
+	}
 }

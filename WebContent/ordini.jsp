@@ -53,9 +53,8 @@ Collection<?> products = (Collection<?>) request.getAttribute("prodotti2");%>
 	                    </a>
 	                    <div class="caption">
 	                        <h3><%=bean.getNome()%><br>
-	                            <small><%=bean.getPrezzo()%> &euro;</small>
 	                        </h3>
-	                        <p><%=bean.getDescrizione()%></p>
+	                        <p>Prezzo Pagato: <%=bean.getPrezzo()%> &euro;</p>
 	                    </div>
 	                </div>
 	            </div>

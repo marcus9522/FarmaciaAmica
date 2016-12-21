@@ -49,23 +49,24 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');">
-                <div align="center"><img width="1080" height="400"  src="http://static.tantasalute.it/r/843X0/www.tantasalute.it/img/anziani-farmaci-originali-brand-generici.jpg">
+                <div align="center"><img width="1080" height="400"  src="http://www.mecretaildesign.com/amministrazione/images/slide/212/Farmacia-comunale-3.jpg">
                 </div>
                 </div>
                 <div class="carousel-caption">
                     <h2></h2>
                 </div>
             </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                 <div align="center"><img width="1080" height="400"  src="http://static.tantasalute.it/r/843X0/www.tantasalute.it/img/anziani-farmaci-originali-brand-generici.jpg">
+            <div class="item" >
+                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');">
+                 <div align="center"><img width="1080" height="400"  src="http://formiche.net/thumb/580x950/2015/02/10051/ac/zc1/q100/formiche-farmacie-ddl-concorrenza.jpg">
                  </div>               
                 <div class="carousel-caption">
                     <h2></h2>
                 </div>
             </div>
+            </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');">
                 <div align="center"><img width="1080" height="400"  src="http://static.tantasalute.it/r/843X0/www.tantasalute.it/img/anziani-farmaci-originali-brand-generici.jpg">
                 </div>
                 <div class="carousel-caption">
@@ -96,10 +97,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.3.7</h4>
+                        <h4><i class="fa fa-fw fa-check"></i> Consegna Rapida</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p>FarmaciaAmica inoltrerà il tuo ordine alla farmacia più vicina alla tua posizione, in questo modo potrai ricevere i tuoi farmaci in breve tempo e comodamente a casa.</p>
                      
                     </div>
                 </div>
@@ -107,20 +108,22 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                        <h4><i class="fa fa-fw fa-medkit"></i> Un vasto catalogo</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p>FarmaciaAmica mette a disposizione una vasta scelta di medicinali adatte a tutte le esigenze, inoltre
+                           il motore di ricerca presente all'interno della piattaforma ti aiuterà a trovare il farmaco che cerchi facilmente. </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                        <h4><i class="fa fa-fw fa-compass"></i> Facile da utilizzare</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <p>La piattaforma è stata implementata in modo da risultare di semplice utilizzo anche a persone meno esperte nel campo informatico.<br>
+                        Ogni operazione della piattaforma è reversibile e potrai tornare allo stato precendente in qualunque momento senza conseguenze.</p>
                     </div>
                 </div>
             </div>
@@ -147,33 +150,7 @@
                             <br>
                 <%i++; %>
          <% } }%>
-            <!--  <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
+      
                 </div>
 
        
@@ -184,10 +161,10 @@
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+                    <h4>Visita il nostro catalogo per visualizzare tutti i prodotti disponibili</h4>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Torna su</a>
+                    <a class="btn btn-lg btn-default btn-block" href="product?action=prodotti">Catalogo</a>
                 </div>
             </div>
         </div>
@@ -220,3 +197,4 @@
     </script>
 
 </body>
+</html>

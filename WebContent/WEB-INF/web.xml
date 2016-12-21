@@ -44,7 +44,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CartControl</servlet-name>
-    <url-pattern>/cart</url-pattern>
+    <url-pattern>/Cart</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AcquistaControl</servlet-name>

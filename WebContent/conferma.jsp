@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*"%>
 <%String email= (String) session.getAttribute("email");%>
@@ -35,14 +35,8 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Info
-                    <small>FarmaciaAmica</small>
+                <h1 class="page-header">Conferma Ordine
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li class="active">About</li>
-                </ol>
             </div>
         </div>
         <!-- /.row -->
@@ -54,12 +48,22 @@
             </div>
             <div class="col-md-6">
                 <h2>Farmacia Amica</h2>
-                <p>L'idea di base del sistema è quella di fornire a persone anziane e/o disabili che hanno problemi a spostarsi, un e-commerce di medicinali, che permetta loro di richiedere i farmaci di cui hanno bisogno inoltrando una richiesta alla farmacia più vicina alla loro ubicazione.
-L'obiettivo principale del sistema sarà quello di migliorare la qualità di vita delle persone sopracitate risolvendo alcuni dei molti problemi che quest'ultime affrontano ogni giorno.  </p>
+                <p>Il tuo ordine è stato inoltrato alla farmacia a te più vicina,riceverai i prodotti il prima possibile. </p>
+                <p>Potrai visualizzare il tuo ordine nel tuo <a href="acquista?azione=leggi">storico</a> oppure torna alla <a href="product2">Home</a></p>
+                <p>Lo staff di FarmaciaAmica</p>
             </div>
         </div>
         <!-- /.row -->
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; FarmaciaAmica 2016</p>
+                </div>
+            </div>
+        </footer>
 
+    </div>
     <!-- /.container -->
 
     <!-- jQuery -->

@@ -49,8 +49,7 @@ public class CartControl extends HttpServlet {
 				e.printStackTrace();
 			}
             request.getSession().setAttribute("cart",cart);
-            response.sendRedirect("http://localhost:8080/FarmaciaAmica"
-            		+ "/product?action=prodotto&id="+id);
+            response.sendRedirect("http://localhost:8080/FarmaciaAmica/product?action=prodotto&nomeProdotto="+id+"&add=yes");
 		
 		
 		}else if(action.equalsIgnoreCase("deleteC")){
