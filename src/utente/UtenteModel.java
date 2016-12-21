@@ -13,5 +13,7 @@ public interface UtenteModel {
 	public UtenteBean LeggiUtente(String email) throws SQLException;
 
 	public void doUpdate(UtenteBean utente) throws SQLException;
+	
+	public boolean doDelete(String email) throws SQLException;
 
 }

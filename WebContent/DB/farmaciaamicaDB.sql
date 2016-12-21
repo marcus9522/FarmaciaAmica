@@ -1,7 +1,3 @@
-
-
-
-
 drop database if exists farmaciaamica;
 
 create database farmaciaamica;
@@ -31,15 +27,15 @@ create table Prodotti(
 create table Acquista(
 	Email varchar(30) not null,
 	NomeProdotto varchar(20) not null,
-    Foreign key(Email) references Cliente(Email) on update cascade,
-    Foreign key(NomeProdotto) references Prodotti(NomeProdotto) on update cascade
+    Foreign key(Email) references Cliente(Email) on update cascade on delete cascade,
+    Foreign key(NomeProdotto) references Prodotti(NomeProdotto) on update cascade on delete cascade
 );
 
 /*Cliente*/
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Alessandro', 'Criscuolo','alecriscuolo@gmail.com', 'password', 2015-08-09, 8000, 20, 'Via Roma', 'Milano', 'MI');
+   VALUES ('Alessandro', 'Criscuolo','alecriscuolo@gmail.com', 'password', '2000-10-20', 8000, 20, 'Via Roma', 'Milano', 'MI');
    INSERT INTO Cliente (Nome, Cognome, Email, Pass, DataNascita, Cap, Civico, Via, Citta, Provincia)
-   VALUES ('Marco', 'Avagliano','marcus@gmail.com', 'password', 2000-05-07, 7000, 30, 'Via Milano', 'Roma', 'RO');
+   VALUES ('Marco', 'Avagliano','marcus@gmail.com', 'password', '2000-05-07', 7000, 30, 'Via Milano', 'Roma', 'RO');
    
 /*Prodotti*/
 

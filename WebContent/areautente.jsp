@@ -24,15 +24,13 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var site = window.location.href
+if(site.indexOf("esito=yes")!=-1) {alert("Operazione effettuata correttamente")}
+</script>
 </head>
 <body>
-<% System.out.println(esito);%>
-<% if(esito!=null){ %>
-<% if(esito.equalsIgnoreCase("yes")){ %>
-<script type="text/javascript">
-alert("Operazione Effettuata Correttamente")
-</script>
-<%} } %>
+
  <%if(email == null){ %>
    <%@ include file ="sidebar.jsp" %>
    <%}else{  %>
@@ -53,7 +51,9 @@ alert("Operazione Effettuata Correttamente")
         <!-- Team Members -->
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <a href="acquista?azione=leggi">
+                    <img class="img-responsive" src="https://cdn2.iconfinder.com/data/icons/clipboard-2/100/clipboard2-512.png" alt="">
+                    </a>
                     <div class="caption">
                         <h3>I Miei Ordini<br>
                         </h3>
@@ -64,8 +64,8 @@ alert("Operazione Effettuata Correttamente")
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                   <a href="utente?azione=leggi&email=<%=email%>">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                   <a href="utente?azione=leggi">
+                    <img class="img-responsive" src="Foto/edit1600.png" alt="">
                     </a>
                     <div class="caption">
                         <h3>Modifica Dati<br>
@@ -76,7 +76,9 @@ alert("Operazione Effettuata Correttamente")
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <a href="utente?azione=delete">
+                    <img class="img-responsive" src="Foto/right-red-x.png" alt="">
+                    </a>
                     <div class="caption">
                         <h3>Elimina Profilo<br>
                         </h3>

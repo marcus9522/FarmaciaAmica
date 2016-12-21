@@ -2,6 +2,8 @@ package acquista;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +48,17 @@ public class AcquistaControl extends HttpServlet {
 				e.printStackTrace();
 			}
 	}
-
+      if(azione.equalsIgnoreCase("leggi")){
+    	  String email = (String) request.getSession().getAttribute("email");
+    	  try {
+			request.setAttribute("prodotti2", model.leggi(email));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+      }
+      RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ordini.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

@@ -199,6 +199,32 @@ public class UtenteModelDM implements UtenteModel {
 					DriverManagerConnectionPool.releaseConnection(connection);
 				}
 			}
+	 }
+			
+			public synchronized boolean doDelete(String email) throws SQLException {
+				Connection connection = null;
+				PreparedStatement preparedStatement = null;
+
+				int result = 0;
+
+				String deleteSQL = "DELETE FROM " + UtenteModelDM.TABLE_NAME + " WHERE EMAIL = ?";
+
+				try {
+					connection = DriverManagerConnectionPool.getConnection();
+					preparedStatement = connection.prepareStatement(deleteSQL);
+					preparedStatement.setString(1, email);
+
+					result = preparedStatement.executeUpdate();
+
+				} finally {
+					try {
+						if (preparedStatement != null)
+							preparedStatement.close();
+					} finally {
+						DriverManagerConnectionPool.releaseConnection(connection);
+					}
+				}
+				return (result != 0);
+			}
 		}
-	 
-}
+	

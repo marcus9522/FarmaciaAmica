@@ -26,6 +26,10 @@
     <servlet-name>CartControl</servlet-name>
     <servlet-class>acquista.CartControl</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AcquistaControl</servlet-name>
+    <servlet-class>acquista.AcquistaControl</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>UtenteControl</servlet-name>
     <url-pattern>/utente</url-pattern>
@@ -41,5 +45,9 @@
   <servlet-mapping>
     <servlet-name>CartControl</servlet-name>
     <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AcquistaControl</servlet-name>
+    <url-pattern>/acquista</url-pattern>
   </servlet-mapping>
 </web-app>

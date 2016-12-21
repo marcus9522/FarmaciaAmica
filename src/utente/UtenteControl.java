@@ -112,7 +112,7 @@ public class UtenteControl extends HttpServlet {
 	        response.sendRedirect(request.getContextPath() + redirectedPage);
 			}
 		else if(azione.equalsIgnoreCase("leggi")){
-			String email = (String)request.getParameter("email");
+			String email = (String) request.getSession().getAttribute("email");
 			request.removeAttribute("utente");
 			try {
 				request.setAttribute("utente", model.LeggiUtente(email));
@@ -148,6 +148,18 @@ public class UtenteControl extends HttpServlet {
 			try {
 				response.sendRedirect(request.getContextPath() +"/areautente.jsp?esito=yes");
 				model.doUpdate(bean);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else if(azione.equalsIgnoreCase("delete")){
+			String email = (String) request.getSession().getAttribute("email");
+			
+			try {
+				model.doDelete(email);
+				request.getSession().invalidate();
+				response.sendRedirect(request.getContextPath() +"/product2");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
