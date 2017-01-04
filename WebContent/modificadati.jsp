@@ -50,7 +50,7 @@
 <label for="nome">NOME:</label><br> 
 		<input name="nome" id="irec" type="text" maxlength="15" required value="<%=bean.getNome() %>" ><br>
 <label for="cognome">COGNOME:</label><br> 
-		<input name="cognome" id="irec" type="text" maxlength="15" required value="<%=bean.getPassword() %>"><br>
+		<input name="cognome" id="irec" type="text" maxlength="15" required value="<%=bean.getCognome() %>"><br>
 <label for="data">DATA DI NASCITA:</label><br> 
 		<input name="data_nascita" id="irec" type="date" value="<%=bean.getData_nascita() %>" max="<%=new java.sql.Date(System.currentTimeMillis()) %>" required ><br>		
 <label for="cap">CAP:</label><br> 
