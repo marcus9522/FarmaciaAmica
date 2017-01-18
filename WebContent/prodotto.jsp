@@ -47,7 +47,7 @@ if(site.indexOf("add=yes")!=-1) {alert("Prodotto aggiunto al carrello")}
                     <small><%=product.getNome() %></small>
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="/product">Home</a>
+                    <li><a href="product2">Home</a>
                     </li>
                     <li class="active"><%=product.getNome() %></li>
                 </ol>
