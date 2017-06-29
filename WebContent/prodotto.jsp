@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page contentType="text/html; charset=ISO-8859-1" import="java.util.*,prodotto.ProductBean"%>
     
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
 <%String email= (String) session.getAttribute("email");
